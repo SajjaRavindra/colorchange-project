@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function fontRange(){
+            var text=document.getElementById("smpText");
+            var size=document.getElementById("fontRange").value;
+            text.style.fontSize=`${size}px`;
+        }
+        function colorChange(){
+            var text=document.getElementById('smpText');
+            var txtcolor=document.getElementById('txtColor').value;
+            text.style.color=txtcolor;
+        }
+        function changeFamily(){
+            document.getElementById("smpText").style.fontWeight = document.getElementById("fontFamily").value;
+            document.getElementById("smpText").style.fontStyle = document.getElementById("fontFamily").value;
+        }
+        function btnLeft(){
+            document.getElementById("smpText").style.textAlign="left";
+        }
+        function btnCenter(){
+            document.getElementById("smpText").style.textAlign="center"
+        }
+        function btnRight(){
+            document.getElementById("smpText").style.textAlign="right"
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+    <div class="mt-4 p-3" style="height: 350px;">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h4>Font Size</h4> 
+                <input type="range" class="form-range" id="fontRange" onchange="fontRange()" min="10" max="50">
+            </div>
+            <div>
+                <h4>Color</h4>
+                <input type="color" onchange="colorChange()" id="txtColor">
+            </div>
+            <div>
+                <h4>Font Family</h4>
+                <select id="fontFamily" class="form-select" onchange="changeFamily()">
+                    <option value="italic">Italic</option>
+                    <option value="bold">Bold</option>
+                </select>
+            </div>
+            <div>
+                <h4>Align</h4>
+                <button onclick="btnLeft()" class="btn btn-info">Left</button>
+                <button onclick="btnCenter()" class="btn btn-info">Center</button>
+                <button onclick="btnRight()" class="btn btn-info">Right</button>
+            </div>
+        </div>
+        <div class="mt-4 text-align-center">
+            <p id="smpText">Ravindra</p>
+        </div>
+    </div>
+</body>
+
+</html>
